@@ -1,7 +1,10 @@
 <template>
   <main class="portfolio-list">
     <div v-for="year in orderedYears" :key="year" class="year-group">
-      <h2>{{ year }}년</h2>
+      <h2>
+        <span v-if="year <= 2012">2012년 이전</span>
+        <span v-else>{{ year }}년</span>
+      </h2>
       <ul>
         <li
           v-for="project in groupedProjects[year]"
@@ -37,6 +40,7 @@ export default {
           if (duration === null) {
             duration = {
               startYear: new Date().getFullYear(),
+              endYear: new Date().getFullYear(),
               months: 0,
               days: 0,
               operation: {
@@ -52,12 +56,8 @@ export default {
           };
         })
         .sort((a, b) => {
-          const aDate = a.duration
-            ? new Date(a.duration.split(" - ")[0])
-            : new Date(a.operation.startYear);
-          const bDate = b.duration
-            ? new Date(b.duration.split(" - ")[0])
-            : new Date(b.operation.startYear);
+          const aDate = a.startYear;
+          const bDate = b.startYear;
           return bDate - aDate;
         });
     },

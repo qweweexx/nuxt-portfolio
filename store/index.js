@@ -280,15 +280,224 @@ export const state = () => ({
         operationDuration: "",
         site: ""
       },
+      {
+        id: 27,
+        name: "서울이비인후과의원",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 28,
+        name: "경남대학교 극동문제연구소",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 29,
+        name: "제2회 대한민국 대학국악제",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 30,
+        name: "제14회 아시아 태평양 소매업자대회",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 31,
+        name: "제8차 세계한상대회",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 32,
+        name: "2009 울진 세계친환경 농업엑스포",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 33,
+        name: "제16회 대한항공 여행사진 공모전",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 34,
+        name: "덕평자연휴게소",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 35,
+        name: "학생 진로교육 사이버인증센터",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 36,
+        name: "해피현수막",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 37,
+        name: "부산미르치과",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 38,
+        name: "G2h",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 39,
+        name: "사이트팩토리",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 40,
+        name: "애니릿지",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 41,
+        name: "메가젠",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },
+      {
+        id: 42,
+        name: "대한민국 2.0",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },  
+      {
+        id: 43,
+        name: "솔로몬 포럼",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      },  
+      {
+        id: 44,
+        name: "리얼 코리아",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      }, 
+      {
+        id: 45,
+        name: "지테크 인터내셔날",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      }, 
+      {
+        id: 46,
+        name: "서치엠",
+        projectType: "신규 구축",
+        type: "WEB",
+        accessibilityMark: false,
+        duration: "2007 - 2012",
+        operationDuration: "",
+        site: ""
+      }, 
     ],
 });
 
 export const getters = {
-  projects: state => state.projects,
+  projects: (state) => state.projects.map((project) => {
+    const [startYear, endYear] = project.duration.split(' - ').map(Number);
+    return {
+      ...project,
+      startYear,
+      endYear,
+    };
+  }),
   getProject: (state) => (id) => {
     return state.projects.find(project => project.id === id);
   },
 };
+
+
 
 export const mutations = {
   addProject: (state, newProject) => {
