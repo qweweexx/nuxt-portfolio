@@ -109,7 +109,7 @@ main {
       margin-bottom: 0.5rem;
       padding: 0.5rem;
       border-radius: 0.5rem;
-      background-color: #f2f2f1;
+      background-color: #f2f2f2;
     }
   }
 }
