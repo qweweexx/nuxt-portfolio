@@ -18,10 +18,7 @@
             >
           </span>
           <span v-else-if="skill === 'Image Generation with Generative AI'">
-            <a
-              href="https://www.youtube.com/channel/UCyRrpd5Hvu8hDN6EyDWuNUw"
-              target="_blank"
-            >
+            <a href="https://aikairos.tistory.com/" target="_blank">
               {{ skill }}</a
             >
           </span>
@@ -74,6 +71,7 @@ export default {
             "Deep Learning",
             "Web Scraping",
             "Voice Modulation",
+            "Image Generation with Generative AI",
           ],
         },
       ],
