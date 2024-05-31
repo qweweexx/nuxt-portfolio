@@ -1,0 +1,66 @@
+$main-color: #2c3e50;
+$base-font: 'D2Coding', sans-serif;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;    
+  justify-content: center;
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    word-break: break-all;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  
+    font-family: $base-font;
+    padding: 0; margin: 0;
+}
+
+header, footer {
+  background-color: $main-color;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  @include flex-center;
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+
+    &:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+  }
+}
+
+header {    
+    height: 5vh;
+}
+
+footer {
+    height: 15vh;
+    flex-direction: column;
+
+    p {margin: 5px}
+}
+
+main {
+  min-height: 80vh;
+  text-align: center;
+  overflow: auto;
+}
